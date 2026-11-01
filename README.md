@@ -1,6 +1,6 @@
 # 2Ball Cleaning — one-page website
 
-A complete, responsive one-page site for **2Ball Cleaning**, a residential and commercial cleaning service based in Summerside, Prince Edward Island.
+A complete, responsive one-page site for **2Ball Cleaning**, a residential and commercial cleaning service based in Summerside, Prince Edward Island. Rated 5.0 across 33 Google reviews.
 
 Built with semantic HTML5, CSS3 and vanilla JavaScript. No frameworks, no build step, no runtime dependencies.
 
@@ -38,8 +38,8 @@ Opening `index.html` directly with `file://` will load, but the local font files
 ├── assets/
 │   ├── fonts/              # Self-hosted Space Grotesk + Manrope (variable woff2)
 │   ├── images/             # Optimised local WebP photography + OG image
-│   └── logo/               # Ball mark, dark/light logo lockups, Apple icon
-├── favicon.svg
+│   └── logo/               # Official badge (WebP), Apple icon, supplied original
+├── favicon.png
 └── README.md
 ```
 
@@ -49,14 +49,22 @@ No image or font is hot-linked. Everything needed to render the page is stored i
 
 ## Design system
 
+The palette is derived from the official badge: the navy outer ring, the mid-blue field and its pale-sky highlights. The previous warm ivory/teal/yellow scheme has been removed entirely.
+
 | Token | Value | Use |
 | --- | --- | --- |
-| Ink | `#101614` | Text, dark sections, footer |
-| Teal | `#0C3B34` | Accent headline, contact section |
-| Signal yellow | `#F4D000` | Primary CTA, highlights, ball mark |
-| Warm white | `#F5F1E8` | Page background |
-| Paper | `#FFFDF7` | Alternating sections |
-| Muted | `#59635C` | Body copy on light backgrounds |
+| Ink | `#0C1B2E` | Text, Why 2Ball band, footer |
+| Navy | `#1B2E5A` | Contact band, step numbers, deep accents |
+| Brand blue | `#2E8FC0` | Logo-matched accent, eyebrow dots, hero headline accent |
+| Button blue | `#1C7BA6` | Primary CTAs with white text |
+| Sky | `#A9DAF0` | Links and CTAs on dark sections |
+| Cool white | `#F2F7FA` | Page background |
+| Paper | `#FBFDFF` | Alternating sections |
+| Mist | `#EAF5FB` | Google reviews band |
+| Muted | `#56697C` | Body copy on light backgrounds |
+| Star gold | `#E3A008` | Google review stars |
+
+The brand accent resolves through `--accent` / `--accent-deep` / `--accent-light`; on dark bands the light variant is used so links and buttons keep their contrast. Primary buttons are deep blue on light sections and pale sky on the Why and Contact bands.
 
 Type is set in **Space Grotesk** (display) and **Manrope** (body), both self-hosted from the Google Fonts OFL release. Display sizes use `clamp()` so the hero scales from mobile to large desktop without hard breakpoints.
 
@@ -73,9 +81,13 @@ To avoid inventing details, the redesign uses only information confirmed by 2Bal
 | Detail used | Source |
 | --- | --- |
 | Company name, “Clean Spaces, Happy Places”, professional cleaning positioning | <https://2ballcleaning.site/> |
-| Standard Cleaning, Deep Cleaning, Move-In/Move-Out Cleaning, Office Cleaning; preferred date and time; property address; room details | The company’s own booking form: <https://form.jotform.com/261204382762050> |
+| Standard Cleaning, Deep Cleaning, Move-In/Move-Out Cleaning; preferred date and time; property address; room details | The company’s own booking form: <https://form.jotform.com/261204382762050> |
+| Standard, Deep, Move-In/Move-Out, Carpet & Upholstery Cleaning, Floor Stripping & Waxing; the work included in each service | Supplied by 2Ball Cleaning for this redesign (service sheet) |
 | Phone `(902) 916-9536` | Yelp listing, and repeated in the company’s Facebook posts that link to `2ballcleaning.site` |
 | Summerside, PEI base and surrounding-area service | Yelp listing, Instagram bio (“Summerside, PE”), Facebook posts for Summerside and Wellington jobs |
+| Street address `454 MacEwen Rd, Summerside, PE C1N 6E9`; 5.0 rating from 33 reviews; quoted review text | The company’s Google Business Profile, “2 ball Cleaning Services” |
+| Business hours: Mon–Sat 8:00 am – 5:00 pm, Sunday closed | The company’s GoDaddy site, <https://site-ymotohhdg.godaddysites.com/> (contact section) |
+| Official logo and photographs from real jobs | The company’s GoDaddy site, <https://site-ymotohhdg.godaddysites.com/> (gallery “Our recent cleaning projects”), plus the logo file supplied by 2Ball |
 | Residential and commercial cleaning | Instagram bio and the booking form’s service types |
 
 ### Deliberately omitted
@@ -83,45 +95,71 @@ To avoid inventing details, the redesign uses only information confirmed by 2Bal
 These were not confirmed and should be added only when the client supplies them:
 
 - **Public email address** — none is published. The contact section therefore uses the verified phone number and the quote form only. Add an email to the contact/footer (and the JSON-LD) when available.
-- **Street address, business hours, pricing, insurance/bonding, years in business, guarantees, eco claims** — none were verified, so none are claimed.
-- **Testimonials** — the original site has no genuine reviews, so the testimonials section was replaced with a useful “Good to know” information band. Do not add invented reviews, ratings or platform badges.
+- **Pricing, insurance/bonding, years in business, guarantees, eco claims, staff numbers** — none were verified, so none are claimed.
+- **Additional reviews** — only three are reproduced. No review names, ratings, dates or platform badges have been invented.
 
 All copy has been rewritten to be concise and conversion-focused, while keeping those facts unchanged.
 
+### Services
+
+The page presents the five services supplied for the redesign, each with its included work:
+
+1. **Standard Cleaning** — dusting, tidying, bathrooms, bins, kitchen surfaces, general upkeep.
+2. **Deep Cleaning** — bathrooms, floors, walls and sills, cupboards, carpet steaming, upholstery, appliances, neglected areas.
+3. **Move-In / Move-Out Cleaning** — bathrooms, walls and floors, kitchen and appliances, cupboards, surfaces, all rooms.
+4. **Carpet & Upholstery Cleaning** — steam cleaning, deep extraction, stain treatment, cleaning solutions, odour neutraliser, furniture refresh.
+5. **Floor Stripping & Waxing** — stripping, machine scrubbing, residue removal, fresh finish and wax, buffing.
+
+Descriptions were tightened for the web, but no service, inclusion or claim was added beyond the supplied list. The quote form’s service menu uses the same five names.
+
+### Google reviews and address
+
+The Google Business Profile for **2 ball Cleaning Services** (linked from the hero rating and the reviews section) is the source for:
+
+- **454 MacEwen Rd, Summerside, PE C1N 6E9, Canada** — shown in the contact section, the footer, the map caption and the JSON-LD, with Google Maps directions links.
+- **Mon–Sat, 8:00 am – 5:00 pm; Sunday closed** — shown in the contact details, the map caption, the footer and the JSON-LD `openingHoursSpecification`.
+- **5.0 rating from 33 reviews** — shown as a linked rating pill in the hero and as the large score in the reviews section.
+- **Three reviews**, reproduced verbatim (backwoods Burger, Jannine Parillas, Annette Nierop) and labelled “Google review”. The section links back to the originals and states where they come from.
+
+Ratings and review counts change. When re-checking, update all three places at once: the hero pill, the reviews section (`5.0`, `33`, and the review cards) and the JSON-LD `aggregateRating` in `index.html`. Do not add a review that is not on the profile.
+
 ### Logo
 
-The original site does not have an image logo — only text set in a spaced sans-serif. The identity here is therefore a **recreation**, not a download: a yellow ball mark plus a Space Grotesk “2BALL / CLEANING SERVICES” wordmark. Files are in `assets/logo/`:
+The site now uses the **official 2Ball Cleaning badge**: navy outer ring, blue field, the two-ball broom/droplet icon, “2BALL / CLEANING SERVICES” and the line “expert care. every square.” It is shown at 42 px beside the Space Grotesk wordmark in the header and footer, and supplies the favicon, Apple touch icon, social card and JSON-LD logo.
 
-- `2ball-mark.svg` — vector ball mark
-- `2ball-logo-dark.png` / `2ball-logo-light.png` — 2× lockups for email, print and social use
-- `apple-touch-icon.png` — full-bleed 180 px home-screen icon
+Files in `assets/logo/`:
 
-If the company has an official logo file, replace these assets and the inline SVG marks in `index.html`, keeping the displayed size and aspect ratio.
+- `2ball-logo.webp` — 512 px badge used on the page, social card and metadata
+- `apple-touch-icon.png` — 180 px home-screen icon on a deep-navy field
+- `Logo.jpg` — the 1024 px original supplied by the company
+
+`favicon.png` (64 px) sits at the project root. If the badge artwork changes, regenerate these three derivatives from the new original and keep the displayed header size at 42 px (36 px on small screens).
 
 ---
 
 ## Photography
 
-All photographs are free-to-use Pexels images downloaded and converted to WebP. They are **representative imagery**, not photos of 2Ball Cleaning’s own jobs, and the Results section says so on the page. The Pexels licence does not require attribution, but sources are credited here and in the footer.
+All photographs on the page are **2Ball Cleaning’s own job photos**, taken from the gallery of their GoDaddy site (<https://site-ymotohhdg.godaddysites.com/>). They show team members in branded shirts working in Summerside-area homes and workplaces. No stock photography remains on the site.
 
-| Local file | Pexels photo | Used for |
+Each image was art-directed and cropped for its slot, then resized and converted to WebP. Some rooms appear both as a service image and in the Results gallery as a different crop; those are the same job, not different clients.
+
+| Local file | Source photo on the GoDaddy site | Used for |
 | --- | --- | --- |
-| `assets/images/hero-cleaners.webp` | [6197121](https://www.pexels.com/photo/women-in-gray-shirt-and-orange-jumper-cleaning-the-house-6197121/) | Hero |
-| `assets/images/standard-living.webp` | [31594918](https://www.pexels.com/photo/bright-scandinavian-living-room-interior-design-31594918/) | Standard Cleaning |
-| `assets/images/deep-kitchen.webp` | [5591903](https://www.pexels.com/photo/woman-cleaning-a-kitchen-counter-5591903/) | Deep Cleaning |
-| `assets/images/move-boxes.webp` | [4246119](https://www.pexels.com/photo/empty-apartment-with-packed-carton-boxes-before-moving-4246119/) | Move-In / Move-Out Cleaning |
-| `assets/images/office-cleaners.webp` | [6197117](https://www.pexels.com/photo/women-in-working-clothes-cleaning-the-house-6197117/) | Office Cleaning |
-| `assets/images/about-window.webp` | [6195281](https://www.pexels.com/photo/woman-in-gray-shirt-wiping-the-glass-window-6195281/) | About |
-| `assets/images/gallery-living.webp` | [35395078](https://www.pexels.com/photo/bright-minimalist-living-room-with-sunlight-35395078/) | Gallery 01 |
-| `assets/images/gallery-bathroom.webp` | [35493900](https://www.pexels.com/photo/bright-modern-minimalist-bathroom-interior-design-35493900/) | Gallery 02 |
-| `assets/images/gallery-window.webp` | [12749678](https://www.pexels.com/photo/living-room-with-sofas-and-coffee-table-12749678/) | Gallery 03 |
-| `assets/images/gallery-sink.webp` | [10573247](https://www.pexels.com/photo/cleaning-kitchen-in-latex-gloves-10573247/) | Gallery 04 |
+| `hero-team-cleaning.webp` | `IMG_7664.jpeg` | Hero |
+| `standard-hallway.webp` | `IMG_7264.jpeg` | Standard Cleaning |
+| `deep-kitchen.webp` | `IMG_7280.jpeg` | Deep Cleaning |
+| `moveout-bathroom.webp` | `IMG_7870.jpeg` | Move-In / Move-Out Cleaning |
+| `carpet-stairs.webp` | `att.2wA_Ar098A7X7U2UJIYYozNgvHKCgxi23kmDrZ9TC.jpeg` | Carpet & Upholstery Cleaning |
+| `floor-kitchen.webp` | `IMG_7902.jpeg` | Floor Stripping & Waxing |
+| `about-stove-detail.webp` | `IMG_7669.jpeg` | About |
+| `gallery-kitchen.webp` | `IMG_7902.jpeg` (alternate crop) | Results 01 |
+| `gallery-hallway.webp` | `IMG_7264.jpeg` (alternate crop) | Results 02 |
+| `gallery-cooktop.webp` | `IMG_7280.jpeg` (alternate crop) | Results 03 |
+| `gallery-stairs.webp` | `att.2wA_…jpeg` (alternate crop) | Results 04 |
 
-Licence: <https://www.pexels.com/license/>
+The social sharing image (`assets/images/og-2ball-cleaning.jpg`) was composed from the official badge, the hero photo and brand type.
 
-The social sharing image (`assets/images/og-2ball-cleaning.jpg`) was composed from the hero image and brand type.
-
-If the client has authentic before-and-after photographs, swap them into the same filenames and update the Results intro/alt text so they are presented accurately.
+The photos are used on 2Ball’s own site. If more authentic project images arrive, add them in the same formats and update the alt text and Results intro so they stay accurate.
 
 ---
 
@@ -165,6 +203,26 @@ The form says: “We’ll only use these details to respond to your request.” 
 
 ---
 
+## Map and hours
+
+The contact section embeds OpenStreetMap for **454 MacEwen Rd, Summerside, PE C1N 6E9, Canada**. It is keyless: the iframe uses OpenStreetMap’s `export/embed.html` with a bounding box and marker coordinates, and no API key is needed. The same address, phone number and hours are also written out in the contact panel and footer, and are in the `LocalBusiness` JSON-LD.
+
+The map’s **Get directions** link opens Google Maps, matching the Google Business Profile. Map tiles are © OpenStreetMap contributors; the licence credit appears in the iframe and in the caption.
+
+The embed loads content from OpenStreetMap and sends the visitor’s IP address there. If a privacy policy is added, mention this third-party embed. To move the map, update the `bbox` and `marker` values in the iframe `src`; to remove it, delete the `.contact__map` figure.
+
+Hours (from the company’s GoDaddy site) are:
+
+| Day | Hours |
+| --- | --- |
+| Monday – Friday | 8:00 am – 5:00 pm |
+| Saturday | 8:00 am – 5:00 pm |
+| Sunday | Closed |
+
+When the hours change, update the contact details, map caption, footer and JSON-LD together. Sunday is omitted from `openingHoursSpecification`, which is how closed days are represented.
+
+---
+
 ## Accessibility & behaviour
 
 Implemented:
@@ -184,7 +242,7 @@ Automated and manual checks performed:
 - Chrome at 1440, 1024, 768 and 375 px: no horizontal overflow; header and gallery reflow correctly.
 - Modal open/close, focus trap, Escape, focus return, mobile-menu focus and inert background tested with Puppeteer.
 - Form success and failure states tested against a local mock endpoint, including a blocked double submit.
-- All ten local images, fonts, favicon and CSS/JS requested successfully (no 404s), and all image `width`/`height` attributes match their files.
+- All eleven content images, the logo, fonts, favicon and CSS/JS requested successfully (no 404s); every content image’s `width`/`height` attributes match its file, and the logo declares a 1:1 ratio.
 
 ### Without JavaScript
 
@@ -196,7 +254,7 @@ Content remains visible and anchor links work, but the quote modal and form requ
 
 - No JavaScript libraries, no CSS framework, no web-font network requests (fonts are local).
 - Hero image is preloaded with `fetchpriority="high"`; all below-the-fold images use `loading="lazy"` and `decoding="async"`.
-- Images are resized to their display needs and converted to WebP: total image payload is about 800 KB, with the hero at ~56 KB.
+- Images are resized to their display needs and converted to WebP: total page image payload is about 1 MB across eleven images, with the hero at ~148 KB.
 - `width` and `height` attributes on every image prevent layout shift.
 - Scroll work uses passive listeners and `requestAnimationFrame`; reveals use IntersectionObserver.
 - Animations are limited to transforms/opacity and respect reduced motion.
@@ -209,7 +267,7 @@ Included:
 
 - Descriptive title and meta description, canonical URL (`https://2ballcleaning.site/`), Open Graph and Twitter card metadata with a local 1200×630 image.
 - One H1, descriptive alt text, semantic section structure.
-- `LocalBusiness` JSON-LD using only verified details: name, phone, Summerside/PE locality, service description, logo/image, and the company’s Facebook and Instagram profiles. No invented address, hours, rating or price range.
+- `LocalBusiness` JSON-LD using only verified details: name, phone, postal address, geo coordinates, opening hours, `hasMap`, service description, 5.0/33 `aggregateRating`, logo/image, and the company’s Google, Facebook and Instagram profiles. No invented price range or guarantees.
 
 The site is a static bundle: deploy the whole folder to any static host (Netlify, Vercel, Cloudflare Pages, GitHub Pages, cPanel). There is no build command.
 
@@ -217,6 +275,6 @@ Before going live:
 
 1. Set the form endpoint and send a real test request.
 2. If the domain changes, update the canonical URL, Open Graph URLs and JSON-LD URLs in `index.html`.
-3. Replace the representative gallery photos if authentic project photos are available.
-4. Add any newly confirmed details (email, hours, address, privacy policy) consistently across the page, footer and JSON-LD.
+3. Add more real project photos to the Results gallery as the company completes new jobs.
+4. Add any newly confirmed details (email, privacy policy) consistently across the page, footer and JSON-LD.
 5. Serve over HTTPS and confirm the favicon and social image resolve at their absolute URLs.
