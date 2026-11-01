@@ -1684,6 +1684,33 @@ button {
   color: var(--accent-light);
 }
 
+.footer__whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+  max-width: 100%;
+  padding-block: 0.3rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+
+.footer__whatsapp svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: none;
+}
+
+.footer__whatsapp:hover {
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .footer__address {
   margin-bottom: 0.7rem;
   font-style: normal;

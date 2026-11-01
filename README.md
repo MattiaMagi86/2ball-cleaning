@@ -84,6 +84,7 @@ To avoid inventing details, the redesign uses only information confirmed by 2Bal
 | Standard Cleaning, Deep Cleaning, Move-In/Move-Out Cleaning; preferred date and time; property address; room details | The company’s own booking form: <https://form.jotform.com/261204382762050> |
 | Standard, Deep, Move-In/Move-Out, Carpet & Upholstery Cleaning, Floor Stripping & Waxing; the work included in each service | Supplied by 2Ball Cleaning for this redesign (service sheet) |
 | Phone `(902) 916-9536` | Yelp listing, and repeated in the company’s Facebook posts that link to `2ballcleaning.site` |
+| WhatsApp link (`https://wa.me/19029169536`) in the footer | Requested by 2Ball Cleaning; it opens a chat on the same verified business number |
 | Summerside, PEI base and surrounding-area service | Yelp listing, Instagram bio (“Summerside, PE”), Facebook posts for Summerside and Wellington jobs |
 | Street address `454 MacEwen Rd, Summerside, PE C1N 6E9`; 5.0 rating from 33 reviews; quoted review text | The company’s Google Business Profile, “2 ball Cleaning Services” |
 | Business hours: Mon–Sat 8:00 am – 5:00 pm, Sunday closed | The company’s GoDaddy site, <https://site-ymotohhdg.godaddysites.com/> (contact section) |
